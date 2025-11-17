@@ -17,7 +17,6 @@ export default function Movies({ searchQuery }) {
 
   const usernameKey = user?.username || "guest";
 
-  // --- Load favorites and showFavorites from localStorage
   useEffect(() => {
     const storedFavs = JSON.parse(
       localStorage.getItem(`favorites_${usernameKey}`)
@@ -28,13 +27,12 @@ export default function Movies({ searchQuery }) {
     if (storedShowFav === "true") setShowFavorites(true);
   }, [usernameKey]);
 
-  // --- Save favorites and showFavorites to localStorage
+
   useEffect(() => {
     localStorage.setItem(`favorites_${usernameKey}`, JSON.stringify(favorites));
     localStorage.setItem(`showFavorites_${usernameKey}`, showFavorites);
   }, [favorites, showFavorites, usernameKey]);
 
-  // --- Fetch movies
   useEffect(() => {
     if (!searchQuery) return;
     setMovies([]);
@@ -58,7 +56,7 @@ export default function Movies({ searchQuery }) {
     fetchMovies();
   }, [searchQuery]);
 
-  // --- Load more pages
+
   useEffect(() => {
     if (!searchQuery || currentPage === 1) return;
 
@@ -164,7 +162,7 @@ export default function Movies({ searchQuery }) {
   return (
     <div className="min-h-screen bg-gray-900 p-8">
       <div className="max-w-[1200px] mx-auto">
-        {/* Top Section */}
+  
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold text-yellow-400">🎥 Movies</h2>
           <button
@@ -174,8 +172,6 @@ export default function Movies({ searchQuery }) {
             ❤️ Favourite
           </button>
         </div>
-
-        {/* Movies Grid */}
         {movies.length === 0 ? (
           <p className="text-center text-gray-400">Nothing found 😕</p>
         ) : (

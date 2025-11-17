@@ -161,7 +161,7 @@ export default function PopularMovies() {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white p-8">
       <div className="max-w-7xl mx-auto">
 
-        {/* Top Section */}
+
         <div className="flex justify-between items-center mb-8">
           <button
             onClick={() => navigate(-1)}
@@ -182,7 +182,7 @@ export default function PopularMovies() {
           </button>
         </div>
 
-        {/* Search */}
+        
         <div className="flex justify-center mb-8 relative w-full max-w-md mx-auto">
           <input
             type="text"
@@ -205,7 +205,7 @@ export default function PopularMovies() {
           )}
         </div>
 
-        {/* Movies Grid */}
+  
         {loading ? (
           <p className="text-center text-gray-400 mt-10">⏳ Loading...</p>
         ) : movies.length === 0 ? (
@@ -231,7 +231,7 @@ export default function PopularMovies() {
                       className="w-full h-80 object-cover"
                     />
 
-                    {/* Favourite Button */}
+             
                     <button
                       onClick={(e) => {
                         e.stopPropagation();

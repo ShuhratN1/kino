@@ -18,10 +18,9 @@ export default function Navbar({ onSearch }) {
   return (
     <nav className="bg-gray-900 text-white p-4 shadow-xl">
 
-      {/* =========== CONTAINER =========== */}
       <div className="max-w-[1200px] mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 relative">
 
-        {/* Logo */}
+        
         <h1
           onClick={() => navigate("/")}
           className="text-3xl font-bold cursor-pointer hover:text-yellow-400 transition-transform transform hover:scale-105"
@@ -29,7 +28,6 @@ export default function Navbar({ onSearch }) {
           🎬 Movie App
         </h1>
 
-        {/* Search (Desktop) */}
         {onSearch && (
           <div className="relative w-full md:w-96 mx-auto mt-3 md:mt-0 hidden md:block">
             <input
@@ -56,7 +54,7 @@ export default function Navbar({ onSearch }) {
           </div>
         )}
 
-        {/* Desktop Links */}
+  
         <div className="hidden md:flex flex-wrap gap-3 items-center mt-3 md:mt-0">
           <Link
             to="/popular"
@@ -108,7 +106,6 @@ export default function Navbar({ onSearch }) {
           )}
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden absolute right-4 top-4 text-white"
           onClick={() => setMobileMenu(!mobileMenu)}
@@ -116,7 +113,6 @@ export default function Navbar({ onSearch }) {
           {mobileMenu ? <X size={30} /> : <Menu size={30} />}
         </button>
 
-        {/* Mobile Search */}
         {onSearch && mobileMenu && (
           <div className="relative w-full px-2 mt-2 md:hidden">
             <input
@@ -132,7 +128,6 @@ export default function Navbar({ onSearch }) {
           </div>
         )}
 
-        {/* Mobile Menu Links */}
         {mobileMenu && (
           <div className="md:hidden flex flex-col items-start w-full px-2 gap-3 mt-4">
             <Link
@@ -193,7 +188,7 @@ export default function Navbar({ onSearch }) {
           </div>
         )}
       </div>
-      {/* END CONTAINER */}
+
 
     </nav>
   );

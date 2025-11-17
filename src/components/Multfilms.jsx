@@ -157,7 +157,7 @@ export default function Multfilms() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-900 via-pink-800 to-gray-900 text-white p-8">
-      {/* CONTAINER */}
+  
       <div className="max-w-[1200px] mx-auto px-4">
 
         <div className="flex justify-between items-center mb-8">
